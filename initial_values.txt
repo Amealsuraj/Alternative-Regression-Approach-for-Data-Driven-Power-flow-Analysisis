@@ -1,0 +1,37 @@
+%%%%%RSIMPLS%%%%
+k=220;
+kmax =472;
+rmsecv =1;
+rmsep=1;
+plots=1;
+h=110;
+classic=0;
+['k','rmsecv','rmsep','h','classic','plots'];
+rsimpls(X1,Y1,'rmsecv',1,'rmsep',1,'h',110,'classic',1)
+rsimpls(X1,Y1,'k',200,'kmax',200,'h',400,'classic',1)
+
+%%CSIMPLS
+csimpls(X1,Y1,'k',200,'plots',1)
+%%%ROBPCA%%
+K =472;
+kmax =472;
+mcd =1;
+
+robpca(X1,'k', 220, 'kmax', 472, 'h', 220, 'mcd', 1,'classic',1,'scree',0)%220 data
+robpca(X1,'k', 220, 'kmax', 472, 'h', 220, 'mcd', 0,'classic',0,'scree',0)%220 data
+robpca(X1,'k', 423, 'kmax', 472, 'h', 400, 'mcd', 0,'classic',0,'scree',0)%400 data
+robpca(X1,'rmsecv',1,'kmax', 472, 'h', 1600, 'mcd', 0,'classic',0,'scree',0)%1600 data
+robpca(X1,'k', 423, 'kmax', 472, 'h', 1600, 'mcd', 0,'classic',0,'scree',0)%1600 data
+
+%%%RPCR
+rpcr(X1,Y1,'kmax',472,'plots',0,'classic',1,'h',1600,' rmsecv',1)
+rpcr(X1,Y1,'k',423,'kmax',472,'plots',1,'classic',1,'h',1600,'intadjust',1)
+
+%%OLS
+result=ols(X1,Y1,'plots',1,'intercept',1)
+
+
+%%mcdegress
+mcdregres(X1,Y1,'h',1600,'plots',1)
+%%MLR
+mlr(X1,Y1,'intercept',1)

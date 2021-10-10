@@ -1,0 +1,43 @@
+ data.V = readtable('test_data/Scaled/V.csv');
+ data.Va = readtable('test_data/Scaled/Va.csv');
+ data.P = readtable('test_data/Scaled/P.csv');
+ data.Q = readtable('test_data/Scaled/Q.csv');
+ data.I = readtable('test_data/Scaled/I.csv');
+ data.Ia = readtable('test_data/Scaled/Ia.csv');
+ data.Xv = readtable('test_data/Xv.csv');
+ data.Xva = readtable('test_data/Xva.csv');
+ P = data.P;
+Q = data.Q;
+V = data.V;
+Va = data.Va;
+I = data.I;
+Ia = data.Ia;
+Xv = data.Xv;
+Xva = data.Xva;
+
+P= table2array(P); 
+Q= table2array(Q); 
+I= table2array(I); 
+Ia= table2array(Ia); 
+V= table2array(V); 
+Va= table2array(Va); 
+Xv= table2array(Xv); 
+Xva= table2array(Xva); 
+
+data.P= P;
+data.Q= Q; 
+data.V= V; 
+data.Va= Va;
+data.I= I; 
+data.Ia= Ia; 
+data.Xv =Xv;
+data.Xva =Xva;
+
+ num_train = size(data.P,1);
+ num_load = size(data.P,2);
+ ref = [69];
+pq = [2,3,5,7,9,11,13,14,16,17,20,21,22,23,28,29,30,33,35,37,38,39,41,43,44,45,47,48,50,51,52,53,57,58,60,63,64,67,68,71,75,78,79,81,82,83,84,86,88,93,94,95,96,97,98,101,102,106,108,109,114,115,117,118];
+pv = [1,4,6,8,10,12,15,18,19,24,25,26,27,31,32,34,36,40,42,46,49,54,55,56,59,61,62,65,66,70,72,73,74,76,77,80,85,87,89,90,91,92,99,100,103,104,105,107,110,111,112,113,116];
+ ref = ref';
+pq = pq';
+pv = pv';
